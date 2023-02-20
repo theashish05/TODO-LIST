@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Franklin Gothic Medium' ;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image:url(https://media.istockphoto.com/id/1326070271/photo/close-up-shot-red-darts-arrows-in-the-target-of-dartboard-center-on-dark-blue-sky-background.jpg?b=1&s=170667a&w=0&k=20&c=qhuzpYkmL-SZ8jJpnPv_CGOL5nTG2HzURBxeUInSH1s=);
+  background-size: cover;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.todo-app{
+  display:flex;
   flex-direction: column;
+  justify-content: start;
+  width: 500px;
+  min-height: 500px;
+  background:linear-gradient(45deg,rgb(2, 121, 218),rgba(214, 147, 1, 0.548));
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+h1{
+  margin: 35px 0;
+  color: #fff;
+  font-size: 30px;
+  text-shadow: 4px 4px 8px rgb(14, 11, 11);
+}
+
+.complete{
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+.todo-form{
+  margin-bottom: 32px;
+}
+
+.todo-input{
+  padding: 15px 30px 15px 10px ;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid rgb(10, 10, 10);
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: rgb(10, 5, 5);
+
+}
+.todo-input::placeholder {
+  color: #f5f3f3;
+}
+
+.todo-button{
+  padding: 17px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(90deg,rgba(62, 66, 128, 0.849),rgba(184, 186, 211, 0.753));
+  text-transform: capitalize;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.todo-input.edit{
+  border: 2px solid #070606;
+}
+
+.todo-button.edit{
+  padding: 15px 22px;
+}
+
+.todo-container{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.todo-row{
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 4px auto;
+  color: rgb(0, 10, 7);
+  background: linear-gradient(rgba(141, 151, 55, 0.685) 50%,rgba(70, 93, 197, 0.685) 100%);
+  padding: 17px;
+  border-radius: 5px;
+  width: 90%;
+
 }
 
-.App-link {
-  color: #61dafb;
+.todo-row:nth-child(4n+1){
+  background: linear-gradient(rgba(165, 125, 15, 0.788) 50% ,rgba(76, 168, 34, 0.733) 100%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-row:nth-child(4n+2){
+  background: linear-gradient(rgba(172, 135, 15, 0.795) 50% ,rgba(22, 104, 136, 0.781) 100%);
+}
+
+.todo-row:nth-child(4n+3){
+  background: linear-gradient(rgba(150, 84, 22, 0.801) 50% ,rgba(51, 51, 139, 0.781) 100%);
+}
+
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: #0f0b0b;
+}
+
+.edit-icon {
+  color: #110404;
+}
+
+.ash{
+  display: flex;
+  align-items: end;
+  justify-content: end;
 }
